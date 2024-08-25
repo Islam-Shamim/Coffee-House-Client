@@ -14,7 +14,7 @@ const AddCoffee = () => {
         const user = {name,prize,supplier,taste,category,details,photo};
         console.log(user)
 
-        fetch('http://localhost:5000/coffee',{
+        fetch('https://coffee-house-pai7dme9r-shamim-islams-projects-5ec8c3e8.vercel.app/coffee',{
             method:"POST",
             body:JSON.stringify(user),
             headers:{

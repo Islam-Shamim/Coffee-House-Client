@@ -15,7 +15,7 @@ const UpdateCoffee = () => {
     const coffee = {name,prize,category,details};
     console.log(coffee);
 
-    fetch(`http://localhost:5000/coffee/${_id}`,{
+    fetch(`https://coffee-house-pai7dme9r-shamim-islams-projects-5ec8c3e8.vercel.app/coffee/${_id}`,{
         method:"PUT",
         body:JSON.stringify(coffee),
         headers:{
