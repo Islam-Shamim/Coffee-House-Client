@@ -3,37 +3,37 @@ import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
   const coffee = useLoaderData();
-  const {_id, name } = coffee;
+  const { _id, name } = coffee;
 
-  const handleUpdate = event =>{
+  const handleUpdate = event => {
     event.preventDefault();
     const form = event.target;
     const name = form.coffee.value;
     const prize = form.prize.value;
     const category = form.category.value;
     const details = form.details.value;
-    const coffee = {name,prize,category,details};
+    const coffee = { name, prize, category, details };
     console.log(coffee);
 
-    fetch(`https://coffee-house-pai7dme9r-shamim-islams-projects-5ec8c3e8.vercel.app/coffee/${_id}`,{
-        method:"PUT",
-        body:JSON.stringify(coffee),
-        headers:{
-            'content-type':'application/json'
-        }
+    fetch(`http://localhost:5000/coffee/${_id}`, {
+      method: "PUT",
+      body: JSON.stringify(coffee),
+      headers: {
+        'content-type': 'application/json'
+      }
     })
-    .then(res=>res.json())
-    .then(data=>{
+      .then(res => res.json())
+      .then(data => {
         console.log(data)
-        if(data.acknowledged){
-            Swal.fire({
-                title: 'Update!',
-                text: 'Coffee Update Successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
+        if (data.acknowledged) {
+          Swal.fire({
+            title: 'Update!',
+            text: 'Coffee Update Successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
         }
-    })
+      })
   }
   return (
     <div className="bg-red-50 p-20">
@@ -48,7 +48,7 @@ const UpdateCoffee = () => {
             <input
               type="text"
               name="coffee"
-            //   defaultValue={name}
+              //   defaultValue={name}
               placeholder="Update coffee name"
               className="input input-bordered"
               required
@@ -95,7 +95,7 @@ const UpdateCoffee = () => {
           </div>
         </div>
         {/*Update button */}
-        <input type="submit" value="Update Coffee" className="btn btn-primary mt-4"/>
+        <input type="submit" value="Update Coffee" className="btn btn-primary mt-4" />
       </form>
     </div>
   );
