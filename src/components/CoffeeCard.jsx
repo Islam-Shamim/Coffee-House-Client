@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
+const CoffeeCard = ({coffee,coffees,setCoffees}) => {
   const { photo, details, name, prize, _id } = coffee;
 
   const handleDelete = (_id) => {
@@ -41,13 +41,13 @@ const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
       <figure>
         <img src={photo} alt="Movie" />
       </figure>
-      <div className="md:flex  w-full px-4 ">
+      <div className="md:flex  w-full px-4 items-center">
         <div className="w-1/2">
-          <h2 className="font-bold"> {name}</h2>
+          <h2 className="font-bold text-xl text-red-400"> {name}</h2>
           <p>{details}</p>
           <p className="font-semibold">Prize : ${prize}</p>
         </div>
-        <div className=" w-1/2 card-actions justify-end">
+        <div className=" w-1/2 card-actions justify-end items-center">
           <div className="join join-vertical space-y-2">
             <button className="btn btn-warning">View</button>
             <Link to={`/updateCoffee/${_id}`}>
@@ -65,8 +65,7 @@ const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
 
 CoffeeCard.propTypes = {
   coffee: PropTypes.object,
-  coffees:PropTypes.object,
-  setCoffees:PropTypes.object
+  setCoffees: PropTypes.func,
 };
 
 export default CoffeeCard;

@@ -18,7 +18,7 @@ const SignIn = () => {
           email,
           lastLoggedIn
         }
-        fetch('https://coffee-house-pai7dme9r-shamim-islams-projects-5ec8c3e8.vercel.app/user',{
+        fetch('http://localhost:5000/user',{
           method:'PATCH',
           body:JSON.stringify(user),
           headers:{

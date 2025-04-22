@@ -17,7 +17,7 @@ const SignUp = () => {
         const createdTime = result.user.metadata.creationTime;
         console.log(result.user);
         const user = {email,createdTime};
-        fetch("https://coffee-house-pai7dme9r-shamim-islams-projects-5ec8c3e8.vercel.app/user",{
+        fetch("http://localhost:5000/user",{
           method:"POST",
           body: JSON.stringify(user),
           headers:{

@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
+import NavBer from "./NavBer";
 
 
 const Main = () => {
     return (
-        <div>
-            <Header></Header>
+        <div className="max-w-screen-xl mx-auto">
+            <NavBer></NavBer>
             <Outlet></Outlet>
         </div>
     );
